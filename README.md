@@ -3,13 +3,26 @@ Code snippets that go along with Arcady's Angular Workshop.
 
 ## app.component.html
 
-```html
-<mat-toolbar>
-  <span>Recipeace | Vrede in de keuken</span>
-</mat-toolbar>
-<div class="content">
-  <!-- add code here -->
-</div>
+```javascript
+export class Recipe {
+  id: string;
+  imageUrl: string;
+  description: string;
+  title: string;
+  prep: string;
+  chef: Chef;
+  ingredients: Ingredient[];
+}
+
+export class Chef {
+  name: string;
+  chefImageUrl: string;
+}
+
+export class Ingredient {
+  ingredientName: string;
+  unit: string;
+}
 ```
 
 ## app.component.css
