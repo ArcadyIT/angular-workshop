@@ -6,6 +6,8 @@ import { PalindromePipe } from './pipe/palindrome.pipe';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
 import { NoteService } from './notebook/note.service';
 import { ProductsService } from './product-overview/products.service';
+import { TickerComponent } from './ticker/ticker.component';
+import { TickerMessageService } from './ticker/ticker-message.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,11 +17,13 @@ describe('AppComponent', () => {
         MessageComponent,
         NotebookComponent,
         PalindromePipe,
-        ProductOverviewComponent
+        ProductOverviewComponent,
+        TickerComponent
       ],
       providers: [
         NoteService,
-        ProductsService
+        ProductsService,
+        TickerMessageService
       ]
     }).compileComponents();
   }));
