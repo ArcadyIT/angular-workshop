@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { MessageComponent } from './message/message.component';
 import { NotebookComponent } from './notebook/notebook.component';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
+import { PalindromePipe } from './pipe/palindrome.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageComponent,
     NotebookComponent,
-    ProductOverviewComponent
+    ProductOverviewComponent,
+    PalindromePipe
   ],
   imports: [
     BrowserModule
