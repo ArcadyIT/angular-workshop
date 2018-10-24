@@ -1,0 +1,13 @@
+.recipe-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 800px;
+
+  .recipe-card {
+    width: 45%;
+    margin-bottom: 40px;
+  }
+}
+
