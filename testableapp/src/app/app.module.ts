@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule  } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MessageComponent } from './message/message.component';
 import { NotebookComponent } from './notebook/notebook.component';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 import { PalindromePipe } from './pipe/palindrome.pipe';
 import { TickerComponent } from './ticker/ticker.component';
 
@@ -15,10 +17,12 @@ import { TickerComponent } from './ticker/ticker.component';
     NotebookComponent,
     ProductOverviewComponent,
     PalindromePipe,
-    TickerComponent
+    TickerComponent,
+    CalculatorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
