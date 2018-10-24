@@ -19,21 +19,7 @@ describe('CalculatorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should calculate correct value', () => {
-    component.value1 = '12';
-    component.value1 = '4';
-
-    component.onCalculate();
-
-    expect(component.result).toBe(3);
-  });
-
-  it('should throw an exception', () => {
-    component.value1 = '12';
-    component.value1 = '4';
-
-    component.onCalculate();
-
-    expect(component.result).toBe(3);
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

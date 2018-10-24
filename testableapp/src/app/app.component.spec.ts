@@ -8,6 +8,9 @@ import { NoteService } from './notebook/note.service';
 import { ProductsService } from './product-overview/products.service';
 import { TickerComponent } from './ticker/ticker.component';
 import { TickerMessageService } from './ticker/ticker-message.service';
+import { CalculatorComponent } from './calculator/calculator.component';
+
+import { FormsModule  } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -18,7 +21,11 @@ describe('AppComponent', () => {
         NotebookComponent,
         PalindromePipe,
         ProductOverviewComponent,
-        TickerComponent
+        TickerComponent,
+        CalculatorComponent
+      ],
+      imports: [
+        FormsModule
       ],
       providers: [
         NoteService,
