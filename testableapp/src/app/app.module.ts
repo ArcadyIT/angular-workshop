@@ -8,6 +8,7 @@ import { NotebookComponent } from './notebook/notebook.component';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { PalindromePipe } from './pipe/palindrome.pipe';
+import { TickerComponent } from './ticker/ticker.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { PalindromePipe } from './pipe/palindrome.pipe';
     MessageComponent,
     NotebookComponent,
     ProductOverviewComponent,
-    CalculatorComponent,
-    PalindromePipe
+    PalindromePipe,
+    TickerComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
