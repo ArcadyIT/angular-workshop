@@ -1,6 +1,72 @@
 # angular-workshop
 Code snippets that go along with Arcady's Angular Workshop.
 
+## recipe-list.component.html
+
+```html
+<div class="recipe-grid">
+  <mat-card class="recipe-card" <!-- add code here -->>
+    <mat-card-header>
+      <mat-card-title><!-- add code here --></mat-card-title>
+      <mat-card-subtitle>Een recept van <!-- add code here --></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="<!-- add code here -->" alt="<!-- add code here -->">
+    <mat-card-content>
+      <div>
+          <p>
+              <!-- add code here -->
+          </p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>BEKIJK RECEPT</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+```
+
+## recipe-list.component.ts
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+<!-- add code here -->
+
+@Component({
+  selector: 'app-recipe-list',
+  templateUrl: './recipe-list.component.html',
+  styleUrls: ['./recipe-list.component.scss']
+})
+export class RecipeListComponent implements OnInit {
+
+  <!-- add code here -->
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+```
+
+## recipe-list.component.scss
+
+```css
+.recipe-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 800px;
+
+  .recipe-card {
+    width: 45%;
+    margin-bottom: 40px;
+  }
+}
+```
+
 ## recipe-list/models/recipe.ts
 
 ```javascript
