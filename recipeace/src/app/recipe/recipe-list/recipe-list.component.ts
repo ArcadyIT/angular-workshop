@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RECIPES } from './shared/recipe-list.mock';
+import { RECIPES } from '../shared/recipe-list.mock';
 
 @Component({
   selector: 'app-recipe-list',
