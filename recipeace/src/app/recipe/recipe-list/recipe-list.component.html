@@ -1,10 +1,11 @@
 <div class="recipe-grid">
   <mat-card class="recipe-card" *ngFor="let recipe of recipes">
     <mat-card-header>
+      <img mat-card-avatar [src]="recipe.chef.chefImageUrl" [alt]="recipe.chef.name"/>
       <mat-card-title>{{recipe.title}}</mat-card-title>
       <mat-card-subtitle>Een recept van {{recipe.chef?.name}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{ recipe.imageUrl }}" alt="{{ recipe.title }}">
+    <img mat-card-image [src]="recipe.imageUrl" [alt]="recipe.title">
     <mat-card-content>
       <div>
           <p>
