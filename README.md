@@ -67,7 +67,7 @@ export class RecipeListComponent implements OnInit {
 }
 ```
 
-## recipe-list/models/recipe.ts
+## recipe/models/recipe.ts
 
 ```javascript
 export class Recipe {
@@ -91,7 +91,7 @@ export class Ingredient {
 }
 ```
 
-## recipe-list/shared/recipe-list.mock.ts
+## recipe/shared/recipe-list.mock.ts
 
 ```typescript
 import { Recipe } from '../models/recipe';
