@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule, MatButton } from '@angular/material/button';
 
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,10 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
     MatCardModule,
     MatButtonModule
   ],
-  declarations: [RecipeListComponent],
+  declarations: [
+    RecipeListComponent,
+    RecipeCardComponent
+  ],
   exports: [RecipeListComponent]
 })
 export class RecipeModule { }
