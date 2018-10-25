@@ -5,23 +5,7 @@ Code snippets that go along with Arcady's Angular Workshop.
 
 ```html
 <div class="recipe-grid">
-  <mat-card class="recipe-card" <!-- add code here -->>
-    <mat-card-header>
-      <mat-card-title><!-- add code here --></mat-card-title>
-      <mat-card-subtitle>Een recept van <!-- add code here --></mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="<!-- add code here -->" alt="<!-- add code here -->">
-    <mat-card-content>
-      <div>
-          <p>
-              <!-- add code here -->
-          </p>
-        </div>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>BEKIJK RECEPT</button>
-    </mat-card-actions>
-  </mat-card>
+  <!-- add code here, use css class recipe-card -->
 </div>
 ```
 
@@ -65,6 +49,29 @@ export class RecipeListComponent implements OnInit {
     margin-bottom: 40px;
   }
 }
+```
+
+## recipe-card.component.html
+
+```html
+<mat-card class="recipe-card" <!-- add code here -->>
+  <mat-card-header>
+    <img mat-card-avatar src="<!-- add code here -->" alt="<!-- add code here -->"/>
+    <mat-card-title><!-- add code here --></mat-card-title>
+    <mat-card-subtitle>Een recept van <!-- add code here --></mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="<!-- add code here -->" alt="<!-- add code here -->">
+  <mat-card-content>
+    <div>
+        <p>
+            <!-- add code here -->
+        </p>
+      </div>
+  </mat-card-content>
+  <mat-card-actions>
+     <button mat-button>BEKIJK RECEPT</button>
+  </mat-card-actions>
+</mat-card>
 ```
 
 ## recipe/models/recipe.ts
