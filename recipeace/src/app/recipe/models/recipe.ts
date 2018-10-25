@@ -1,4 +1,4 @@
-export class Recipe {
+export interface Recipe {
   id: string;
   imageUrl: string;
   description: string;
@@ -8,12 +8,12 @@ export class Recipe {
   ingredients: Ingredient[];
 }
 
-export class Chef {
+export interface Chef {
   name: string;
   chefImageUrl: string;
 }
 
-export class Ingredient {
+export interface Ingredient {
   ingredientName: string;
   unit: string;
 }
