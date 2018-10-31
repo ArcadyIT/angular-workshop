@@ -25,6 +25,13 @@ export class RecipeService {
       );
   }
 
+  getRecipe(id: string): Observable<Recipe> {
+    return this.http.get<Recipe>(`${this.recipeEndpoint}/${id}`)
+      .pipe(
+        catchError(this.handleError<Recipe>('getRecipe'))
+      );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

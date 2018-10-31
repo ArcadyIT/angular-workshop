@@ -1,0 +1,30 @@
+.container {
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  display: flex;
+  margin-top: 100px;
+}
+
+.text-404-container {
+
+  border-right: 2px solid black;
+  padding-right: 10px;
+  margin-right: 10px;
+  height: 150px;
+
+  .text-404 {
+    margin-top: -20px;
+    font-size: 96px;
+  }
+}
+
+.text {
+  font-size: 25px;
+  text-align: left;
+  align-self: flex-end;
+}
+
+a {
+  color: inherit;
+}

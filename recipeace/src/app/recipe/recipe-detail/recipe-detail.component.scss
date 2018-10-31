@@ -1,0 +1,44 @@
+.recipe-detail {
+  width: 800px;
+}
+
+.recipe-detail-image {
+  height: 300px;
+  object-fit: cover;
+}
+
+.recipe-detail-add {
+  position: absolute;
+  right: 16px;
+  top: 347px;
+}
+
+.recipe-detail-description {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.recipe-detail-container {
+  display: flex;
+}
+
+.recipe-detail-ingredients {
+  flex: 0 0 300px;
+}
+
+.recipe-detail-ingredients ul {
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+  }
+}
+
+.recipe-detail-preparation {
+  p {
+    line-height: 20px;
+  }
+}

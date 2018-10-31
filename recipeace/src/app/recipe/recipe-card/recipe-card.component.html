@@ -13,6 +13,6 @@
       </div>
   </mat-card-content>
   <mat-card-actions>
-      <button mat-button color="accent">BEKIJK RECEPT</button>
+    <button mat-button color="accent" [routerLink]="['/recipes', recipe.id]">BEKIJK RECEPT</button>
   </mat-card-actions>
 </mat-card>
