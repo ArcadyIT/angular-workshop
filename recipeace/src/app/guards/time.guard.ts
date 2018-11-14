@@ -14,7 +14,9 @@ export class TimeGuard implements CanActivate {
 
     const result = seconds % 2 === 0;
 
-    console.log(`Guard checked access: ${seconds} seconds passed, result is ${result}.`);
+    if (!result) {
+      console.warn('TimeGuard denies access!');
+    }
 
     return result;
   }

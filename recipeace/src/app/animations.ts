@@ -1,8 +1,7 @@
 import {
-  trigger, animateChild, group,
+  trigger, group,
   transition, animate, style, query
 } from '@angular/animations';
-
 
 // Routable animations
 export const slideInAnimation =

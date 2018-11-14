@@ -5,13 +5,13 @@ import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component'
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { TimeGuard } from './guard/time.guard';
+import { TimeGuard } from './guards/time.guard';
 
 const appRoutes: Routes = [
   {
     path: 'recipes/:id',
     component: RecipeDetailComponent,
-    data: { animation: 'recipe' },
+    data: { title: 'Recept', animation: 'recipe' },
     canActivate: [ TimeGuard ]
   },
   {
