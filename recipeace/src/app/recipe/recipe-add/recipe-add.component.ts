@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-add',
@@ -11,16 +12,20 @@ export class RecipeAddComponent implements OnInit {
 
   recipeAddFormGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private recipeService: RecipeService,
+    private router: Router) { }
 
   ngOnInit() {
     this.recipeAddFormGroup = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required],
-      prep: ['', [Validators.required]],
+      title: [null, Validators.required],
+      imageUrl: [null, Validators.required],
+      description: [null, Validators.required],
+      prep: [null, Validators.required],
       chef: this.formBuilder.group({
-        name: [],
-        chefImageUrl: []
+        name: [null, Validators.required],
+        chefImageUrl: [null, Validators.required]
       }),
       ingredients: this.formBuilder.array([])
     });
@@ -34,8 +39,8 @@ export class RecipeAddComponent implements OnInit {
 
   addIngredient() {
     const ingredient = this.formBuilder.group({
-      ingredientName: [],
-      unit: []
+      ingredientName: [null, Validators.required],
+      unit: [null, Validators.required]
     });
 
     this.ingredientForms.push(ingredient);
@@ -43,5 +48,23 @@ export class RecipeAddComponent implements OnInit {
 
   deleteIngredient(index: number) {
     this.ingredientForms.removeAt(index);
+  }
+
+  onSubmit() {
+    // stop here if form is invalid
+    if (this.recipeAddFormGroup.invalid) {
+      console.log('Form not valid');
+      return;
+    }
+
+    this.addRecipe(this.recipeAddFormGroup.value);
+  }
+
+  addRecipe(recipe) {
+    this.recipeService.postRecipe(recipe).subscribe(response => {
+      if (response) {
+        this.router.navigate(['/recipes']);
+      }
+    });
   }
 }

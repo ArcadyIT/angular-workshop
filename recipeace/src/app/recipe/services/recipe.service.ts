@@ -32,6 +32,14 @@ export class RecipeService {
       );
   }
 
+  public postRecipe(recipe: Recipe): Observable<Recipe> {
+    const url = `${this.recipeEndpoint}/add`;
+    return this.http.post<Recipe>(url, recipe)
+    .pipe(
+      catchError(this.handleError<Recipe>('postRecipe'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

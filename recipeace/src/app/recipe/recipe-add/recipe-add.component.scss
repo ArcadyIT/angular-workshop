@@ -1,14 +1,18 @@
-.recipe-add {
+.recipe-form {
   width: 800px;
-  padding: 24px;
 }
 
-.recipe-form {
+mat-card-title {
+  margin-top: 24px;
+  margin-left: -16px;
+}
+
+.recipe-card {
+  margin: 24px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 800px;
 
   .recipe-form-group {
     width: 47%;
@@ -40,4 +44,8 @@
       }
     }
   }
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: red;
 }
