@@ -1,0 +1,43 @@
+.recipe-add {
+  width: 800px;
+  padding: 24px;
+}
+
+.recipe-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 800px;
+
+  .recipe-form-group {
+    width: 47%;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .recipe-form-field {
+      width: 100%;
+    }
+
+    .recipe-form-group-ingredients {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+
+      .recipe-form-ingredient {
+        width: 60%;
+      }
+
+      .recipe-form-ingredient-unit {
+        width: 23%;
+      }
+
+      .recipe-form-ingredient-delete {
+        margin-top: 5px;
+        width: 12%;
+      }
+    }
+  }
+}

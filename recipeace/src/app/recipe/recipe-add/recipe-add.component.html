@@ -1,0 +1,53 @@
+<mat-card class="recipe-add">
+  <mat-card-header>
+    <mat-card-title>Nieuw recept toevoegen</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="recipeAddFormGroup" class="recipe-form">
+      <div class="recipe-form-group">
+        <h4>Gerecht</h4>
+        <mat-form-field class="recipe-form-field">
+          <input matInput placeholder="Titel" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="recipe-form-field">
+          <textarea matInput placeholder="Omschrijving" formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="recipe-form-field">
+          <textarea matInput placeholder="Bereiding" formControlName="prep"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="recipe-form-group" formGroupName="chef">
+        <h4>Kok</h4>
+        <mat-form-field class="recipe-form-field">
+          <input matInput placeholder="Naam kok" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="recipe-form-field">
+          <input matInput placeholder="Afbeelding URL kok" formControlName="chefImageUrl">
+        </mat-form-field>
+      </div>
+      <div class="recipe-form-group" formArrayName="ingredients">
+        <h4>Ingrediënten</h4>
+        <!-- <button mat-mini-fab class="recipe-detail-add">
+          <mat-icon aria-label="Add button" routerLink="/recipes/new">add</mat-icon>
+        </button> -->
+        <div class="recipe-form-group-ingredients" *ngFor="let ingredient of ingredientForms.controls; let i=index" [formGroupName]="i">
+          <mat-form-field class="recipe-form-ingredient">
+            <input matInput placeholder="Ingrediënt" formControlName="ingredientName">
+          </mat-form-field>
+          <mat-form-field class="recipe-form-ingredient-unit">
+            <input matInput placeholder="Hoeveelheid" formControlName="unit">
+          </mat-form-field>
+          <button class="recipe-form-ingredient-delete" mat-icon-button (click)="deleteIngredient()">
+            <mat-icon aria-label="Ingrediënt verwijderen">delete</mat-icon>
+          </button>
+        </div>
+        <button mat-button color="accent" (click)="addIngredient()">TOEVOEGEN</button>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button color="accent">OPSLAAN</button>
+    <button mat-button>ANNULEREN</button>
+  </mat-card-actions>
+</mat-card>

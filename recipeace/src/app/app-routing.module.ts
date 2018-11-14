@@ -3,16 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
+import { RecipeAddComponent } from './recipe/recipe-add/recipe-add.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-import { TimeGuard } from './guards/time.guard';
 
 const appRoutes: Routes = [
   {
+    path: 'recipes/new',
+    component: RecipeAddComponent,
+    data: { title: 'Recept toevoegen', animation: 'recipes' }
+  },
+  {
     path: 'recipes/:id',
     component: RecipeDetailComponent,
-    data: { title: 'Recept', animation: 'recipe' },
-    canActivate: [ TimeGuard ]
+    data: { title: 'Recept', animation: 'recipe' }
   },
   {
     path: 'recipes',
