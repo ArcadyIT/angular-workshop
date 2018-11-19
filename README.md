@@ -1,46 +1,124 @@
 # angular-workshop
 Code snippets that go along with Arcady's Angular Workshop.
 
-## app-routing.module.ts
+## recipe.service.ts
+```typescript
+postRecipe(recipe: Recipe): Observable<Recipe> {
+    <!-- add code here -->
+  }
 ```
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
-<!-- add code here -->
+## recipe-add.component.html
 
-import { TimeGuard } from './guards/time.guard';
+```html
+<form <!-- add code here --> class="recipe-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Nieuw recept toevoegen</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="recipe-card">
+        <div class="recipe-form-group">
+          <h4>Gerecht</h4>
+          <mat-form-field class="recipe-form-field">
+            <input matInput placeholder="Titel" <!-- add code here -->>
+          </mat-form-field>
+          <mat-form-field class="recipe-form-field">
+            <input matInput placeholder="Afbeelding" <!-- add code here -->>
+          </mat-form-field>
+          <mat-form-field class="recipe-form-field">
+            <textarea matInput placeholder="Omschrijving" <!-- add code here -->></textarea>
+          </mat-form-field>
+          <mat-form-field class="recipe-form-field">
+            <textarea matInput placeholder="Bereiding" <!-- add code here -->></textarea>
+          </mat-form-field>
+        </div>
+        <div class="recipe-form-group" <!-- add code here -->>
+          <h4>Kok</h4>
+          <mat-form-field class="recipe-form-field">
+            <input matInput placeholder="Naam kok" <!-- add code here -->>
+          </mat-form-field>
+          <mat-form-field class="recipe-form-field">
+            <input matInput placeholder="Afbeelding URL kok" <!-- add code here -->>
+          </mat-form-field>
+        </div>
+        <div class="recipe-form-group" <!-- add code here -->>
+          <h4>Ingrediënten</h4>
+          <div class="recipe-form-group-ingredients" <!-- add code here -->>
+            <mat-form-field class="recipe-form-ingredient">
+              <input matInput placeholder="Ingrediënt" <!-- add code here -->>
+            </mat-form-field>
+            <mat-form-field class="recipe-form-ingredient-unit">
+              <input matInput placeholder="Hoeveelheid" <!-- add code here -->>
+            </mat-form-field>
+            <button class="recipe-form-ingredient-delete" mat-icon-button <!-- add code here -->>
+              <mat-icon aria-label="Ingrediënt verwijderen">delete</mat-icon>
+            </button>
+          </div>
+          <button mat-button color="accent" <!-- add code here -->>TOEVOEGEN</button>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="accent" <!-- add code here -->">OPSLAAN</button>
+      <button mat-button <!-- add code here -->>ANNULEREN</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
 
-const appRoutes: Routes = [
-  {
-    path: <!-- add code here -->,
-    component: <!-- add code here -->,
-    data: { title: 'Recept', animation: 'recipe' }, <!-- (optional) -->
-    canActivate: [ TimeGuard ] <!-- (optional) -->
-  },
-  {
-    path: <!-- add code here -->,
-    component: <!-- add code here -->,
-    data: { title: 'Overzicht recepten', animation: 'recipes' }
-  },
-  { path: '',
-    redirectTo: <!-- add code here -->,
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
+```
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(
-      appRoutes
-    )
-  ],
-  exports: [
-    RouterModule
-  ]
-})
-export class AppRoutingModule { }
+## recipe-add.component.scss
 
+```css
+.recipe-form {
+  width: 800px;
+}
+
+mat-card-title {
+  margin-top: 24px;
+  margin-left: -16px;
+}
+
+.recipe-card {
+  margin: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .recipe-form-group {
+    width: 47%;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .recipe-form-field {
+      width: 100%;
+    }
+
+    .recipe-form-group-ingredients {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+
+      .recipe-form-ingredient {
+        width: 60%;
+      }
+
+      .recipe-form-ingredient-unit {
+        width: 23%;
+      }
+
+      .recipe-form-ingredient-delete {
+        margin-top: 5px;
+        width: 12%;
+      }
+    }
+  }
+}
 ```
 
 ## recipe-list.component.html
@@ -66,133 +144,29 @@ export class AppRoutingModule { }
 </mat-card>
 ```
 
-## recipe.module.ts
+## recipe-add.component.ts
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-<!-- add code here -->
-
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipeCardComponent } from './recipe-card/recipe-card.component';
-import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
-
-@NgModule({
-  imports: [
-    CommonModule,
-    <!-- add code here -->,
-
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule
-  ],
-  declarations: [
-    RecipeListComponent,
-    RecipeCardComponent,
-    RecipeDetailComponent
-  ],
-  exports: [RecipeListComponent]
-})
-export class RecipeModule { }
-
-```
-
-## app.component.html
-
-```typescript
-<mat-toolbar color="primary">
-  <a class="home-link" href="/"><span>{{ title }} | {{ subtitle }}</span></a>
-</mat-toolbar>
-<div class="content">
-  <!-- add code here -->
-</div>
-
-```
-
-## app.component.ts
-
-```typescript
-import { Component } from '@angular/core';
 <!-- add code here -->
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-recipe-add',
+  templateUrl: './recipe-add.component.html',
+  styleUrls: ['./recipe-add.component.scss']
 })
-export class AppComponent {
-  title = 'Recipeace';
-  subtitle = 'Vrede in de keuken';
-}
-```
+export class RecipeAddComponent implements OnInit {
 
+  recipeAddFormGroup: FormGroup;
 
-## app.component.html
+  constructor(<!-- add code here -->) { }
 
-```typescript
-<mat-toolbar color="primary">
-  <a class="home-link" href="/"><span>{{ title }} | {{ subtitle }}</span></a>
-</mat-toolbar>
-<div class="content">
-  <div [@routeAnimation]="getAnimationData(routerOutlet)">
-    <router-outlet #routerOutlet="outlet"></router-outlet>
-  </div>
-</div>
-
-```
-
-## app.component.ts
-
-```typescript
-import { Component } from '@angular/core';
-<!-- add code here -->
-import { slideInAnimation } from './animations';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [ slideInAnimation ]
-})
-export class AppComponent {
-  title = 'Recipeace';
-  subtitle = 'Vrede in de keuken';
-
-  getAnimationData(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  ngOnInit() {
+    this.recipeAddFormGroup = this.formBuilder.group({
+      <!-- add code here -->
+    });    
   }
+
+  <!-- add code here -->
 }
-```
-
-## animations.ts
-
-```typescript
-import {
-  trigger, group,
-  transition, animate, style, query
-} from '@angular/animations';
-
-// Routable animations
-export const slideInAnimation =
-  trigger('routeAnimation', [
-    transition('recipes <=> recipe', [
-      query(':enter, :leave', style({ position: 'relative', width: '100%', opacity: 1 })),
-        group([
-          query(':enter', [
-            style({ opacity: 0 }),
-            animate('500ms ease-in-out', style({ opacity: 1 }))
-          ]),
-          query(':leave', [
-            style({ opacity: 1 }),
-            animate('500ms ease-in-out', style({ opacity: 0 }))
-          ]),
-        ])
-    ])
-  ]);
 
 ```

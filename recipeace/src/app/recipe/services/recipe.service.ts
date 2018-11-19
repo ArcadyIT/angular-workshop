@@ -32,7 +32,7 @@ export class RecipeService {
       );
   }
 
-  public postRecipe(recipe: Recipe): Observable<Recipe> {
+  postRecipe(recipe: Recipe): Observable<Recipe> {
     const url = `${this.recipeEndpoint}/add`;
     return this.http.post<Recipe>(url, recipe)
     .pipe(
