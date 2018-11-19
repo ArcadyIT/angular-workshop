@@ -103,6 +103,95 @@ export class RecipeModule { }
 
 ```
 
+## recipe-detail.component.html
+```html
+<mat-card class="recipe-detail" *ngIf="recipe$ | async as recipe">
+  <mat-card-header>
+    <img mat-card-avatar [src]="recipe.chef.chefImageUrl" [alt]="recipe.chef.name"/>
+    <mat-card-title>{{recipe.title}}</mat-card-title>
+    <mat-card-subtitle>Een recept van {{recipe.chef?.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="recipe-detail-image" mat-card-image [src]="recipe.imageUrl" [alt]="recipe.title">
+  <button mat-fab class="recipe-detail-add">
+    <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+  </button>
+  <mat-card-content>
+    <div>
+      <p class="recipe-detail-description">
+          {{ recipe.description }}
+      </p>
+    </div>
+    <div class="recipe-detail-container">
+      <div class="recipe-detail-ingredients">
+        <strong>Ingrediënten</strong>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients">
+            {{ ingredient.unit }} {{ ingredient.ingredientName }}
+          </li>
+        </ul>
+      </div>
+      <div class="recipe-detail-preparation">
+        <strong>Bereiding</strong>
+        <p [innerHtml]="recipe.prep"></p>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="accent" <!-- Add code here -->>NAAR OVERZICHT</button>
+  </mat-card-actions>
+</mat-card>
+
+```
+
+## recipe-detail.component.scss
+```css
+.recipe-detail {
+  width: 800px;
+}
+
+.recipe-detail-image {
+  height: 300px;
+  object-fit: cover;
+}
+
+.recipe-detail-add {
+  position: absolute;
+  right: 16px;
+  top: 347px;
+}
+
+.recipe-detail-description {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.recipe-detail-container {
+  display: flex;
+}
+
+.recipe-detail-ingredients {
+  flex: 0 0 300px;
+}
+
+.recipe-detail-ingredients ul {
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+  }
+}
+
+.recipe-detail-preparation {
+  p {
+    line-height: 20px;
+  }
+}
+
+```
+
 ## app.component.html
 
 ```typescript
