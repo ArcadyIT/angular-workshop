@@ -44,7 +44,7 @@ export class AppRoutingModule { }
 
 ```
 
-## recipe-list.component.html
+## recipe-card.component.html
 
 ```html
 <mat-card class="recipe-card">
