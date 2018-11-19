@@ -121,29 +121,6 @@ mat-card-title {
 }
 ```
 
-## recipe-list.component.html
-
-```html
-<mat-card class="recipe-card">
-  <mat-card-header>
-    <img mat-card-avatar [src]="recipe.chef.chefImageUrl" [alt]="recipe.chef.name"/>
-    <mat-card-title>{{recipe.title}}</mat-card-title>
-    <mat-card-subtitle>Een recept van {{recipe.chef?.name}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image [src]="recipe.imageUrl" [alt]="recipe.title">
-  <mat-card-content>
-    <div>
-        <p>
-            {{ recipe.description }}
-        </p>
-      </div>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button color="accent" <!-- add code here -->>BEKIJK RECEPT</button>
-  </mat-card-actions>
-</mat-card>
-```
-
 ## recipe-add.component.ts
 
 ```typescript
