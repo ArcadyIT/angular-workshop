@@ -2,7 +2,8 @@
 Code snippets that go along with Arcady's Angular Workshop.
 
 ## app-routing.module.ts
-```
+
+```typescript
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
