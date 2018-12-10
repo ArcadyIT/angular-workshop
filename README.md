@@ -1,6 +1,16 @@
 # angular-workshop
 Code snippets that go along with Arcady's Angular Workshop.
 
+## Steps
+1. Generate a new Angular application
+2. Add material to the angular application
+3. Add the code snippets below
+
+## Code Snippets
+
+<details><summary>Click to view code snippets</summary>
+<p>
+
 ## app.component.html
 
 ```html
@@ -22,3 +32,6 @@ Code snippets that go along with Arcady's Angular Workshop.
   padding-top: 30px;
 }
 ```
+
+</p>
+</details>
