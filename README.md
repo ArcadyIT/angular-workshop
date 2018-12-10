@@ -3,11 +3,12 @@ Code snippets that go along with Arcady's Angular Workshop.
 
 ## Steps
 1. Generate a new Angular application
-  <details><summary>Click to view code snippets</summary>
-  <p>
-    `ng new Recipeace`
-  </p>
-  </details>
+<details><summary>Click to view code snippets</summary>
+<p>
+  `ng new Recipeace`
+</p>
+</details>
+
 2. Add material to the angular application
 3. Add the code snippets below
 
