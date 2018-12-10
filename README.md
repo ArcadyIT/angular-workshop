@@ -1,6 +1,11 @@
 # angular-workshop
 Code snippets that go along with Arcady's Angular Workshop.
 
+## API Urls
+- GET `/api/recipes` (Gets the recipes overview (a list of recipes))
+- GET `/api/recipes/:dataId` (Gets one specific recipe based on the recipe ID)
+- POST `/api/recipes/add` (Adds a recipe)
+
 ## app-routing.module.ts
 
 ```typescript
