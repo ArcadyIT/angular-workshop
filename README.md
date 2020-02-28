@@ -1,11 +1,17 @@
 # angular-workshop
+
 Code snippets that go along with Arcady's Angular Workshop.
 
 ## API Urls
+<<<<<<< HEAD
+=======
+
+>>>>>>> 03-http-api
 - GET `/api/recipes` (Gets the recipes overview (a list of recipes))
 - GET `/api/recipes/:dataId` (Gets one specific recipe based on the recipe ID)
 - POST `/api/recipes/add` (Adds a recipe)
 
+<<<<<<< HEAD
 ## app-routing.module.ts
 
 ```typescript
@@ -70,6 +76,34 @@ export class AppRoutingModule { }
     <button mat-button color="accent" <!-- add code here -->>BEKIJK RECEPT</button>
   </mat-card-actions>
 </mat-card>
+=======
+## recipe.service.ts
+
+```typescript
+<!-- add code here -->
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RecipeService {
+
+  constructor(<!-- add code here -->) { }
+
+  getRecipes(): Observable<Recipe[]> {
+    <!-- add code here -->
+  }
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      console.error(`An error occurred while handling data: ${error}`); // log to console instead
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+}
+>>>>>>> 03-http-api
 ```
 
 ## recipe.module.ts
@@ -106,6 +140,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 })
 export class RecipeModule { }
 
+<<<<<<< HEAD
 ```
 
 ## recipe-detail.component.html
@@ -289,5 +324,48 @@ export const slideInAnimation =
         ])
     ])
   ]);
+=======
+  recipes: Recipe[];
 
+  constructor(<!-- add code here -->) { }
+
+  ngOnInit() {
+    <!-- add code here -->
+  }
+
+  <!-- add code here -->
+}
+```
+
+## base-url-interceptor.ts
+
+```typescript
+import { Injectable } from '@angular/core';
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class BaseUrlInterceptor implements HttpInterceptor {
+
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+    <!-- add code here -->
+
+    return next.handle(apiRequest);
+  }
+}
+```
+
+## index.ts
+
+```typescript
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { BaseUrlInterceptor } from './base-url-interceptor';
+>>>>>>> 03-http-api
+
+export const httpInterceptorProviders = [
+  { provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true },
+];
 ```
