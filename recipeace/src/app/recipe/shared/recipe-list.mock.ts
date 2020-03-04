@@ -1,4 +1,4 @@
-import { Recipe } from '../models/recipe';
+import { Recipe } from "../models/recipe";
 
 export const RECIPES: Recipe[] = JSON.parse(`
 [
@@ -55,7 +55,7 @@ export const RECIPES: Recipe[] = JSON.parse(`
       "prep": "Veeg de paddenstoelen schoon met keukenpapier en snijd ze in plakjes. Verhit de olie in een wok en bak de paddenstoelen 3 min. op middelhoog vuur. Kook ondertussen de pasta volgens de aanwijzingen op de verpakking.<br>            Voeg de spinazie toe aan de paddenstoelen en roerbak 2 min. Voeg de truffeltapenade en de slagroom toe. Laat even inkoken op hoog vuur. Breng op smaak met peper en eventueel zout.<br>            Rasp de kaas. Meng de pasta voorzichtig met de paddenstoelensaus. Bestrooi met de kaas.<br>",
       "chef": {
           "name": "Sergio Herman",
-          "chefImageUrl": "https://www.detafelvantine.be/sites/default/files/sergio_S9L0700-B100.jpg"
+          "chefImageUrl": "https://static.nieuwsblad.be/Assets/Images_Upload/2019/04/23/4f3d556e-659b-11e9-8988-2e818b2016c3_web_scale_0.5238096_0.5238096__.jpg"
       },
       "ingredients": [
           {
