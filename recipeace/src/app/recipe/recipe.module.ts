@@ -15,7 +15,6 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
   imports: [
     CommonModule,
     RouterModule,
-
     MatCardModule,
     MatButtonModule,
     MatIconModule
